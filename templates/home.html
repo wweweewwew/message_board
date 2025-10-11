@@ -1,0 +1,11 @@
+<h1>Доска объявлений</h1>
+
+<p><a href="{% url 'add_post' %}">Добавить объявление</a></p>
+
+<ul>
+    {% for post in object_list %}
+        <li>{{ post.text }}</li>
+    {% empty %}
+        <li>Пока нет объявлений.</li>
+    {% endfor %}
+</ul>
